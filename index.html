@@ -1,191 +1,796 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christmas Cards - Premium Holiday Card Collection</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="innerbox">
-        <div class="navbarsection">
-          <!-- Left Sidebar Navigation -->
-          <nav class="sidebar">
-            <ul class="nav-menu">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <span class="nav-icon">🏠</span>
-                  <span class="nav-text">Home</span>
+
+<head>
+    <!-- {% block head %} {% endblock %}{% load static %} -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Digital Brains</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    
+
+    <!-- Main CSS File -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+<style>
+    .active {
+        font-weight: bold;
+
+    }
+
+    /* Ensure the logo container starts from the left */
+    #logo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* Align content to the left */
+        padding: 0;
+        /* Remove any padding */
+
+    }
+
+    /* Additional styling for the logo image */
+    #logo img {
+        width: 230px;
+        /* Ensure the image fits within its container */
+        height: 80px;
+    }
+
+    
+</style>
+
+<body class="index-page christmas-page">
+
+
+    <header id="header" class="header fixed-top" style="background-color: rgb(1,18,36);">
+
+
+        <!-- End Top Bar -->
+
+        <div id="branding" class="branding d-flex align-items-center" style="background-color: #011224;">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="#" id="logo" class="logo d-flex align-items-center" target="_blank" rel="noopener noreferrer">
+                    <img style="height: 80%;" loading="lazy"
+                        src="https://digital-brains.io/static/app/iguru3/assets/img/Digital_Brains_io.png" alt="">
                 </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle">
-                  <span class="nav-icon">👑</span>
-                  <span class="nav-text">Luxury Range</span>
-                  <span class="dropdown-arrow">▼</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="#" class="dropdown-link">🌲 Christmas Trees</a>
-                  </li>
-                  <li>
-                    <a href="#" class="dropdown-link">🏔️ Winter Landscapes</a>
-                  </li>
-                  <li>
-                    <a href="#" class="dropdown-link">⛪ Religious Card</a>
-                  </li>
-                  <li>
-                    <a href="#" class="dropdown-link">🐦 Animal and Birds</a>
-                  </li>
-                  <li>
-                    <a href="#" class="dropdown-link">🎄 Christmas Themes</a>
-                  </li>
-                  <li><a href="#" class="dropdown-link">✨ Whimsical</a></li>
-                  <li>
-                    <a href="#" class="dropdown-link">🏛️ London Scenes</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle">
-                  <span class="nav-icon">📋</span>
-                  <span class="nav-text">Standard Range</span>
-                  <span class="dropdown-arrow">▼</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="#" class="dropdown-link">🌲 Christmas Trees</a>
-                  </li>
-                  <li>
-                    <a href="#" class="dropdown-link">🐦 Robins and Doves</a>
-                  </li>
-                  <li>
-                    <a href="#" class="dropdown-link">❄️ Winter Scenes</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
+
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="https://digital-brains.io/"
+                                class="{% if request.path == '/' %}active{% endif %}">All Products</a>
+                        </li>
+
+                        <!-- Office -->
+                        <!-- ============================================================================================= -->
+
+
+                        <li class="dropdown"><a href="#"><span> Office</span> </i></a>
+                            <!-- <ul>
+                                <li><a class="dropdown-item"
+                                        href="https://digital-brains.io/website/wordpress-website/">WordPress
+                                        Website</a></li>
+                            </ul> -->
+                        </li>
+
+                         <!-- Marketing & Advertising -->
+                        <!-- ====================================================================================== -->
+
+                        <li class="dropdown"><a href="#"><span>Marketing & Advertising</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a class="dropdown-item"
+                                        href="https://digital-brains.io/content-creation/website-copywriting/">Marketing</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://digital-brains.io/content-creation/video-creation/">Promotional</a></li>
+                            </ul>
+
+                        </li>
+
+                        <!-- Digital Marketing -->
+                        <!-- ===================================================================================== -->
+
+                        <li class="dropdown"><a href="#"><span> Retail Printing</span></a>
+                            <!-- <ul>
+                                <li><a class="dropdown-item"
+                                        href="https://digital-brains.io/digital-marketing/local-seo/">Local SEO</a></li>
+                            </ul> -->
+
+                        </li>
+
+                        <!-- Display Exhibition -->
+                        <!-- ============================================================================ -->
+
+                        <li class="dropdown"><a href="#"><span> Display Exhibition</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a class="dropdown-item" href="https://store.digital-brains.io/">(Indoor)</a></li>
+
+                                <li><a class="dropdown-item"
+                                        href="https://digital-brains.io/services/remote-it-support/"> (Outdoor)</a></li>
+                            </ul>
+
+                        </li>
+                         
+                        <!--Festivals & Occasions -->
+                        <!-- ======================================================================================= -->
+                        <li class="dropdown"><a href="#"><span>Festivals & Occasions</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a class="dropdown-item" href="https://digital-brains.io/free-file-transfer/">CHRISTMAS</a></li>
+                                <li><a class="dropdown-item" href="https://digital-brains.io/upload/">SEASONAL</a></li>
+                                <li><a class="dropdown-item" href="https://projectcamp.digital-brains.io/">Events & Occasions</a></li>
+                               
+                            </ul>
+
+                        </li>
+
+                        <!--ECO Products -->
+                        <!-- ===================================================================================== -->
+                        <li><a href="https://digital-brains.io/branding/"
+                                class="{% if request.path == '/branding/' %}active{% endif %}">ECO Products</a></li>
+
+                        <!-- Next Day Delivery -->
+                        <!-- ================================================================================== -->
+                        <li class="dropdown"><a href="#"><span>Next Day Delivery</span></a>
+                        </li>
+
+                        <!-- Sample Pack -->
+                        <!-- ================================================================================== -->
+                        <li class="dropdown"><a href="#"><span>Sample Pack</span></a>
+                        </li>
+
+                         <!-- Website        -->
+                        <!-- ================================================================================== -->
+                        <li><a href="https://printing.digital-brains.io/"
+                                class="{% if request.path == '/https://printing.digital-brains.io/' %}active{% endif %}">Website</a>
+                        </li>
+                    </ul>
+                    <i id="mobile-nav-toggle" class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+            </div>
         </div>
-        <div class="contentsection">
-          <div class="contentbox1">
-            <h3 class="image-section-title">Luxury Collection</h3>
-            <div class="top-box">
-              <img
-                src="village.webp"
-                alt="Christmas Village"
-                class="box-image"
-              />
+    </header>
+
+    <div id="scroll-nav">
+        <a href="https://outlook.office.com/bookwithme/me" target="_blank">
+            <span><i class="fas fa-calendar-alt"></i> <b>Request</b></span><span> Request an Appointment</span>
+        </a>
+        <a aria-label="Chat on WhatsApp"
+            href="https://wa.me/+447387371872?text=I'm%20interested%20in%20your%20car%20for%20sale" target="_blank">
+            <span><i class="fab fa-whatsapp"></i> <b>WhatsApp</b></span><span> Chat to a WhatsApp</span>
+        </a>
+        <a href="https://www.linkedin.com/company/105474436/admin/dashboard/" target="_blank">
+            <span><i class="fab fa-linkedin"></i> <b>Find Us</b></span><span> Connect with Us on LinkedIn</span>
+        </a>
+        <a href="https://uk.trustpilot.com/review/digital-brains.io" target="_blank">
+            <span><img src="https://1000logos.net/wp-content/uploads/2022/09/Trustpilot-Symbol.png" alt="Trustpilot"
+                    style="width: 60px; height: auto;"> <b style="font-size: 9px;">Trustpilot</b></span><span> Leave a
+                Trustpilot <br> Review</span>
+        </a>
+
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="ww_right_content" style="background-color: whitesmoke;">
+
+
+
+
+
+<!-- body -->
+
+
+<div class="christmas-container">
+    <div class="innerbox">
+      <div class="navbarsection">
+        <!-- Left Sidebar Navigation -->
+        <nav class="sidebar">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Home</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                <span class="nav-icon">👑</span>
+                <span class="nav-text">Luxury Range</span>
+                
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" class="dropdown-link">🌲 Christmas Trees</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-link">🏔️ Winter Landscapes</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-link">⛪ Religious Card</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-link">🐦 Animal and Birds</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-link">🎄 Christmas Themes</a>
+                </li>
+                <li><a href="#" class="dropdown-link">✨ Whimsical</a></li>
+                <li>
+                  <a href="#" class="dropdown-link">🏛️ London Scenes</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle">
+                <span class="nav-icon">📋</span>
+                <span class="nav-text">Standard Range</span>
+               
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" class="dropdown-link">🌲 Christmas Trees</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-link">🐦 Robins and Doves</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-link">❄️ Winter Scenes</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="contentsection">
+        <div class="contentbox1">
+          <h3 class="image-section-title">Luxury Collection</h3>
+          <div class="top-box">
+            <img
+              src="village.webp"
+              alt="Christmas Village"
+              class="box-image"
+            />
+            <div class="image-overlay">
+              <span class="image-label">Christmas Village</span>
+            </div>
+          </div>
+          <div class="bottom-boxes">
+            <div class="bottom-box1">
+              <img src="santa.webp" alt="Santa Claus" class="box-image" />
               <div class="image-overlay">
-                <span class="image-label">Christmas Village</span>
+                <span class="image-label">Santa Claus</span>
               </div>
             </div>
-            <div class="bottom-boxes">
-              <div class="bottom-box1">
-                <img src="santa.webp" alt="Santa Claus" class="box-image" />
-                <div class="image-overlay">
-                  <span class="image-label">Santa Claus</span>
-                </div>
-              </div>
-              <div class="bottom-box2">
-                <img src="snowy.webp" alt="Snowy Scene" class="box-image" />
-                <div class="image-overlay">
-                  <span class="image-label">Winter Scene</span>
-                </div>
+            <div class="bottom-box2">
+              <img src="snowy.webp" alt="Snowy Scene" class="box-image" />
+              <div class="image-overlay">
+                <span class="image-label">Winter Scene</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="contentbox2">
-            <div class="christmas-content">
-              <h1 class="main-title">Welcome to Christmas Cards</h1>
-              <p class="description">
-                A high-quality collection of Christmas cards available to be
-                printed with your personal details. Over 150 designs to choose
-                from, representing the best of British design.
-              </p>
+        <div class="contentbox2">
+          <div class="christmas-content">
+            <h1 class="main-title">Welcome to Christmas Cards</h1>
+            <p class="description">
+              A high-quality collection of Christmas cards available to be
+              printed with your personal details. Over 150 designs to choose
+              from, representing the best of British design.
+            </p>
 
-              <h2 class="subtitle">Start Your Holiday Card Journey Today!</h2>
-              <p class="subtitle-text">It's as Easy as 1-2-3:</p>
+            <h2 class="subtitle">Start Your Holiday Card Journey Today!</h2>
+            <p class="subtitle-text">It's as Easy as 1-2-3:</p>
 
-              <div class="steps-container">
-                <div class="step">
-                  <div class="step-number">1</div>
-                  <div class="step-content">
-                    <h3>Choose Your Style</h3>
-                    <p>Select from our Luxurious or Standard range.</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number">2</div>
-                  <div class="step-content">
-                    <h3>Pick Your Design</h3>
-                    <p>Browse our extensive collection of templates.</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number">3</div>
-                  <div class="step-content">
-                    <h3>Place Your Order</h3>
-                    <p>Submit your details and let us handle the rest.</p>
-                  </div>
+            <div class="steps-container">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h3>Choose Your Style</h3>
+                  <p>Select from our Luxurious or Standard range.</p>
                 </div>
               </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h3>Pick Your Design</h3>
+                  <p>Browse our extensive collection of templates.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h3>Place Your Order</h3>
+                  <p>Submit your details and let us handle the rest.</p>
+                </div>
+              </div>
+            </div>
 
-              <p class="proof-text">
-                We'll send you a proof for your approval before finalizing your
-                order.
-              </p>
-              <p class="urgency-text">
-                Don't miss out on this festive opportunity! Order your
-                personalised Christmas cards now.
-              </p>
+            <p class="proof-text">
+              We'll send you a proof for your approval before finalizing your
+              order.
+            </p>
+            <p class="urgency-text">
+              Don't miss out on this festive opportunity! Order your
+              personalised Christmas cards now.
+            </p>
 
-              <button class="order-button">
-                Order Now! to avoid the last minute rush.
-              </button>
+            <button class="order-button">
+              Order Now! to avoid the last minute rush.
+            </button>
+          </div>
+        </div>
+
+        <div class="contentbox1">
+          <h3 class="image-section-title">Standard Collection</h3>
+          <div class="top-box">
+            <img
+              src="berries.webp"
+              alt="Christmas Berries"
+              class="box-image"
+            />
+            <div class="image-overlay">
+              <span class="image-label">Christmas Berries</span>
             </div>
           </div>
-
-          <div class="contentbox1">
-            <h3 class="image-section-title">Standard Collection</h3>
-            <div class="top-box">
+          <div class="bottom-boxes">
+            <div class="bottom-box1">
               <img
-                src="berries.webp"
-                alt="Christmas Berries"
+                src="fillers.webp"
+                alt="Christmas Fillers"
                 class="box-image"
               />
               <div class="image-overlay">
-                <span class="image-label">Christmas Berries</span>
+                <span class="image-label">Holiday Fillers</span>
               </div>
             </div>
-            <div class="bottom-boxes">
-              <div class="bottom-box1">
-                <img
-                  src="fillers.webp"
-                  alt="Christmas Fillers"
-                  class="box-image"
-                />
-                <div class="image-overlay">
-                  <span class="image-label">Holiday Fillers</span>
-                </div>
-              </div>
-              <div class="bottom-box2">
-                <img
-                  src="kj84b_grande.webp"
-                  alt="Christmas Design"
-                  class="box-image"
-                />
-                <div class="image-overlay">
-                  <span class="image-label">Classic Design</span>
-                </div>
+            <div class="bottom-box2">
+              <img
+                src="kj84b_grande.webp"
+                alt="Christmas Design"
+                class="box-image"
+              />
+              <div class="image-overlay">
+                <span class="image-label">Classic Design</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+ 
+
+
+
+
+
+
+
+        <div class="ti-widget" data-layout-id="5" data-set-id="light-background" data-pid="02d9ac2551017337855ef09de4"
+            data-pager-autoplay-timeout="6">
+            <div class="ti-widget-container ti-col-4">
+                <div class="ti-footer source-Google ti-clickable-link">
+                    <div class="ti-large-logo">
+                        <div class="ti-v-center"> <img class="ti-logo-fb"
+                                src="https://cdn.trustindex.io/assets/platform/Google/logo.svg" alt="Google" width="150"
+                                height="25"> </div>
+                    </div>
+                    <div class="ti-stars star-lg"> <span class="ti-star f"></span><span class="ti-star f"></span><span
+                            class="ti-star f"></span><span class="ti-star f"></span><span class="ti-star e"></span>
+                    </div>
+                    <div class="ti-rating-text"> <strong class="ti-rating"> GOOD </strong> <span class="nowrap">Based on
+                            <strong><a href="" target="_blank" rel="noopener">463 ratings</a></strong>.</span>
+                    </div>
+                </div>
+                <div class="ti-reviews-container">
+                    <div class="ti-controls">
+                        <div class="ti-next" style="display: block;"></div>
+                        <div class="ti-prev" style="display: block;"></div>
+                    </div>
+                    <div class="ti-reviews-container-wrapper">
+                        <div class="ti-review-item source-Google" style="position: relative;">
+                            <div class="ti-inner">
+                                <div class="ti-review-header">
+                                    <div class="ti-profile-img"> <img
+                                            src="https://lh3.googleusercontent.com/a-/ACNPEu8F48IFj4PABIozzEkGFRCcpTzik9FI2k-bsC9ohg=s120-c-c-rp-w64-h64-mo-br100"
+                                            alt="diego tomasoni"> </div>
+                                    <div class="ti-profile-details">
+                                        <div class="ti-name"> Wonderful website! </div>
+                                        <div class="ti-date"><strong>Date of experience:</strong> <br>
+                                            September 22, 2024.</div>
+                                    </div>
+                                </div>
+                                <div class="ti-stars"><span class="ti-star f"></span><span
+                                        class="ti-star f"></span><span class="ti-star f"></span><span
+                                        class="ti-star f"></span><span class="ti-star f"></span></div>
+                                <div class="ti-review-content">Our website came out beautifully well. This company was
+                                    able to deliver a nice site. Smooth process from start to finish. The monthly
+                                    payment facility is really helpful.</div>
+                            </div>
+                        </div>
+                        <div class="ti-review-item source-Google" style="position: relative;">
+                            <div class="ti-inner">
+                                <div class="ti-review-header">
+                                    <div class="ti-profile-img"> <img
+                                            src="https://lh3.googleusercontent.com/a/ALm5wu3dIT0cBJJOefufggiKBG6TvcJrFEHLfbSMYY1o=s120-c-c-rp-w64-h64-mo-br100"
+                                            alt="Elio Basciani"> </div>
+                                    <div class="ti-profile-details">
+                                        <div class="ti-name"> Digital brains helped <br>our business go fly. </div>
+                                        <div class="ti-date"> <strong>Date of experience:</strong> <br>
+                                            October 15, 2024</div>
+                                    </div>
+                                </div>
+                                <div class="ti-stars"><span class="ti-star f"></span><span
+                                        class="ti-star f"></span><span class="ti-star f"></span><span
+                                        class="ti-star f"></span><span class="ti-star f"></span></div>
+                                <div class="ti-review-content"> We hired SEO services from Digital Brains which helped
+                                    us reach good traffic. Our business which started last year has become a national
+                                    business after the keywords started ranking, thanks to them. </div>
+                            </div>
+                        </div>
+                        <div class="ti-review-item source-Google" style="position: relative;">
+                            <div class="ti-inner">
+                                <div class="ti-review-header">
+                                    <div class="ti-profile-img"> <img
+                                            src="https://lh3.googleusercontent.com/a/AItbvmkh4q2jhW709798IQoVcR_BuCbUcX8nNtezzIM=s120-c-c-rp-w64-h64-mo-br100"
+                                            alt="Stefano pistone"> </div>
+                                    <div class="ti-profile-details">
+                                        <div class="ti-name">It's a great company to <br> have even small <br>tasks
+                                            done. </div>
+                                        <div class="ti-date"><strong>Date of experience:</strong> <br>
+                                            October 9, 2024</div>
+                                    </div>
+                                </div>
+                                <div class="ti-stars"><span class="ti-star f"></span><span
+                                        class="ti-star f"></span><span class="ti-star f"></span><span
+                                        class="ti-star f"></span><span class="ti-star f"></span></div>
+                                <div class="ti-review-content"> We require some frequent social media posts to engage
+                                    our customers. Digital brains helped us with these posts and also gave us a way to
+                                    generate extra sales for our business.</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="ti-controls-dots">
+                        <div class="dot" data-pager-state="0"></div>
+                        <div class="dot active" data-pager-state="1"></div>
+                        <div class="dot" data-pager-state="2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>// Review Slider Start
+        $(".review_slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 500,
+            items: 1,
+            dots: false,
+            nav: false,
+        });
+
+        $('.selectpicker').on('show.bs.select', function ($this, e) {
+            typed4.stop();
+            //year_typed4.stop();
+            //model_typed4.stop();
+            autos_typed4.stop();
+        });
+
+        $('.selectpicker').on('hide.bs.select', function () {
+            typed4.start();
+            //year_typed4.start();
+            //model_typed4.start();
+            autos_typed4.start();
+        });
+    </script>
+    <br>
+    <br>
+    <br>
+
+
+
+    <!-- Required Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".review_slider").owlCarousel({
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 500,
+                items: 3,  /* Change this to 3 for showing 3 reviews per slide */
+                dots: false,
+                nav: false,
+                margin: 10, /* Add margin between reviews if necessary */
+                responsive: {
+                    0: {
+                        items: 1  /* Display 1 item for mobile screens */
+                    },
+                    600: {
+                        items: 2  /* Display 2 items for medium screens */
+                    },
+                    1000: {
+                        items: 3  /* Display 3 items for larger screens */
+                    }
+                }
+            });
+        });
+    </script>
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Call-to-action Section - Home Page -->
+    <section id="cta-section" class="cta-section">
+        <div id="cta-container" class="container">
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-10">
+                    <div id="cta-text" class="text-center">
+
+                        <h3 id="cta-heading-large">Have a great online business idea!</h3>
+                        <p id="cta-paragraph">Let us listen to you. We like to listen and convert your dreams into a
+                            reality.
+                            Stop worrying about technology problems.
+                            Focus on your business. Let us provide the support you deserve.</p>
+                        <h5 id="cta-heading-small" class="text-white">Let’s get started</h5>
+                        <a id="cta-button" class="cta-btn" href="https://outlook.office.com/bookwithme/me">Book an
+                            Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call-to-action Section -->
+
+
+
+    <footer id="footer" class="footer" style="background-color: #011224;">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-about">
+                    <a href="{% url 'home' %}" class="logo d-flex align-items-center" target="_blank"
+                        rel="noopener noreferrer">
+                        <img style="height: 80%;" loading="lazy"
+                            src="https://digital-brains.io/static/app/iguru3/assets/img/Digital_Brains_io.png" alt="">
+                    </a>
+                    <p>
+                        <strong> Your Partner in Digital Success</strong><br>
+                        Ready to Elevate Your Business?<br>
+                        At Digital Brains, we're dedicated to helping you achieve smart business by digitizing your
+                        business processes. Our comprehensive suite of services includes: <a href="#"><strong
+                                style="color: white;">Read more.........</strong></a>
+                    </p>
+
+
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/105474436/admin/dashboard/"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Nearest Expert</a></li>
+                        <li><a href="#">Free Site Audit</a></li>
+                        <li><a href="#">Faqs</a></li>
+                        <li><a href="#">Website</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Content Creation</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Free Products</a></li>
+                        <li><a href="#">Website Projects</a></li>
+                        <li><a href="#">Awesome Screen Shots</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Re Seller</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Cookies Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Gdpr</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Employee Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p> Digital Brains.io Ltd</p>
+                    <p> 128 City Road,
+                        London, </p>
+                    <p>EC1V 2NX</p>
+                    <p class=""><strong>Company no : </strong> <span>15921176(England and Wales)</span></p>
+                    <!-- <p class="mt-4"><strong>Phone:</strong> <span>020 3005 7436</span></p> -->
+                    <!-- <p><strong>Support Email:</strong> <span>projects@digital-brains.io</span></p> -->
+                    <p><strong> Email:</strong> <span>projects@digital-brains.io</span></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Digital Brains</strong> <span>All Rights
+                    Reserved</span></p>
+            <div class="credits">
+
+                Designed by <a href="" style="color: whitesmoke;">Digital Brains</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/assets/js/main.js"></script>
     <script src="app.js"></script>
-  </body>
+
+    <!-- Christmas Navigation JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Christmas navigation script loaded');
+            
+            // Get all dropdown items (li elements with dropdown class)
+            const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+            console.log('Found dropdown items:', dropdownItems.length);
+            
+            dropdownItems.forEach((item, index) => {
+                const toggle = item.querySelector('.dropdown-toggle');
+                const menu = item.querySelector('.dropdown-menu');
+                
+                console.log('Setting up dropdown item', index, 'Toggle:', toggle, 'Menu:', menu);
+                
+                if (toggle && menu) {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        console.log('Dropdown clicked!', this);
+                        console.log('Current menu classes:', menu.className);
+                        
+                        // Close other dropdowns first
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                const otherToggle = otherItem.querySelector('.dropdown-toggle');
+                                const otherMenu = otherItem.querySelector('.dropdown-menu');
+                                if (otherToggle && otherMenu) {
+                                    otherToggle.classList.remove('active');
+                                    otherMenu.classList.remove('active');
+                                    otherMenu.style.display = 'none';
+                                    otherMenu.style.opacity = '0';
+                                    otherMenu.style.visibility = 'hidden';
+                                }
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        const isActive = toggle.classList.contains('active');
+                        console.log('Is currently active:', isActive);
+                        
+                        toggle.classList.toggle('active');
+                        menu.classList.toggle('active');
+                        
+                        // Force show the dropdown
+                        if (menu.classList.contains('active')) {
+                            menu.style.display = 'block';
+                            menu.style.opacity = '1';
+                            menu.style.visibility = 'visible';
+                            menu.style.position = 'absolute';
+                            menu.style.zIndex = '9999';
+                            menu.style.top = '100%';
+                            menu.style.left = '0';
+                            menu.style.background = 'white';
+                            menu.style.border = '2px solid red';
+                            menu.style.padding = '10px';
+                            menu.style.minWidth = '200px';
+                            console.log('DROPDOWN SHOULD BE VISIBLE NOW!');
+                            console.log('Menu items found:', menu.querySelectorAll('.dropdown-link').length);
+                        } else {
+                            menu.style.display = 'none';
+                            menu.style.opacity = '0';
+                            menu.style.visibility = 'hidden';
+                            console.log('Dropdown closed');
+                        }
+                    });
+                } else {
+                    console.log('Missing toggle or menu for item', index);
+                }
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.nav-item')) {
+                    dropdownItems.forEach(item => {
+                        const toggle = item.querySelector('.dropdown-toggle');
+                        const menu = item.querySelector('.dropdown-menu');
+                        if (toggle && menu) {
+                            toggle.classList.remove('active');
+                            menu.classList.remove('active');
+                            menu.style.display = 'none';
+                            menu.style.opacity = '0';
+                            menu.style.visibility = 'hidden';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+<script src="app.js"></script>
+
+</body>
+
 </html>
