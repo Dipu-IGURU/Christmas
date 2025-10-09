@@ -50,7 +50,7 @@ body.christmas-page {
     top: 0;
     height: 100vh;
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 5;
 }
 
 .christmas-page .sidebar {
@@ -125,7 +125,7 @@ body.christmas-page {
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1001;
+    z-index: 15;
     margin-top: 8px;
     list-style: none;
     padding: 8px 0;
@@ -151,7 +151,7 @@ body.christmas-page {
     opacity: 1 !important;
     visibility: visible !important;
     position: absolute !important;
-    z-index: 1001 !important;
+    z-index: 15 !important;
     background: white !important;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
